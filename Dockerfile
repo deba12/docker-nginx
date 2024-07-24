@@ -7,6 +7,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y update \
     && rm -rf /var/cache/apt/archives/* \
     && DEBIAN_FRONTEND=noninteractive apt-get remove --purge --auto-remove -y
 
+COPY openssl.cnf /etc/ssl/openssl.cnf
+
 VOLUME /etc/nginx
 VOLUME /run/php
 
